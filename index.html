@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>HappyOS Store</title>
+    <style>
+        :root { --bg: #000000; --card: #1c1c1e; --green: #30d158; --gray: #8e8e93; }
+        body { background-color: var(--bg); color: white; font-family: -apple-system, sans-serif; margin: 0; padding: 20px; user-select: none; }
+        
+        .header { margin-bottom: 30px; text-align: center; }
+        .header h1 { font-size: 32px; margin: 0; color: var(--green); letter-spacing: -1px; }
+        .header p { color: var(--gray); margin-top: 5px; font-size: 14px; }
+
+        .section-title { font-size: 22px; font-weight: bold; margin: 20px 0 15px 0; border-right: 4px solid var(--green); padding-right: 10px; }
+
+        .app-card { background: var(--card); padding: 12px; border-radius: 18px; display: flex; align-items: center; margin-bottom: 12px; transition: transform 0.2s; }
+        .app-card:active { transform: scale(0.97); }
+        
+        .app-icon { width: 60px; height: 60px; border-radius: 14px; margin-left: 15px; object-fit: cover; border: 1px solid #333; }
+        
+        .info { flex-grow: 1; text-align: right; }
+        .name { font-weight: bold; font-size: 16px; display: block; }
+        .category { color: var(--gray); font-size: 12px; }
+
+        .btn-get { background: #2c2c2e; color: var(--green); border: none; padding: 6px 18px; border-radius: 20px; font-weight: bold; font-size: 14px; cursor: pointer; }
+        .btn-get:hover { background: var(--green); color: white; }
+
+        /* تذييل الصفحة */
+        .footer { margin-top: 40px; text-align: center; color: var(--gray); font-size: 11px; padding-bottom: 30px; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>HappyOS</h1>
+    <p>عالم الألعاب المهكرة والتطبيقات المعدلة</p>
+</div>
+
+<div class="section-title">الألعاب الصدقية</div>
+
+<div class="app-card">
+    <img src="https://r2.erthals.com/gta_sa_icon.png" class="app-icon">
+    <div class="info">
+        <span class="name">GTA: San Andreas</span>
+        <span class="category">Mod Menu + Cheats</span>
+    </div>
+    <button class="btn-get" onclick="install('gta')">GET</button>
+</div>
+
+<div class="app-card">
+    <img src="https://r2.erthals.com/fnaf1_icon.png" class="app-icon">
+    <div class="info">
+        <span class="name">Five Nights at Freddy's</span>
+        <span class="category">Full Paid Game</span>
+    </div>
+    <button class="btn-get" onclick="install('fnaf1')">GET</button>
+</div>
+
+<div class="app-card">
+    <img src="https://r2.erthals.com/mc_icon.png" class="app-icon">
+    <div class="info">
+        <span class="name">Minecraft</span>
+        <span class="category">Premium Version</span>
+    </div>
+    <button class="btn-get" onclick="install('minecraft')">GET</button>
+</div>
+
+<div class="app-card">
+    <img src="https://r2.erthals.com/pubg_icon.png" class="app-icon">
+    <div class="info">
+        <span class="name">PUBG Mobile</span>
+        <span class="category">Anti-Ban Mod</span>
+    </div>
+    <button class="btn-get" onclick="install('pubg')">GET</button>
+</div>
+
+<div class="section-title">التطبيقات المعدلة</div>
+
+<div class="app-card">
+    <img src="https://r2.erthals.com/spotify_icon.png" class="app-icon">
+    <div class="info">
+        <span class="name">Spotify Plus</span>
+        <span class="category">Premium Features</span>
+    </div>
+    <button class="btn-get" onclick="install('spotify')">GET</button>
+</div>
+
+<div class="app-card">
+    <img src="https://r2.erthals.com/yt_icon.png" class="app-icon">
+    <div class="info">
+        <span class="name">YouTube Pro</span>
+        <span class="category">No Ads + Background</span>
+    </div>
+    <button class="btn-get" onclick="install('youtube')">GET</button>
+</div>
+
+<div class="app-card">
+    <img src="https://r2.erthals.com/insta_icon.png" class="app-icon">
+    <div class="info">
+        <span class="name">Instagram Rocket</span>
+        <span class="category">Save Videos & Photos</span>
+    </div>
+    <button class="btn-get" onclick="install('instagram')">GET</button>
+</div>
+
+<div class="app-card">
+    <img src="https://r2.erthals.com/snap_icon.png" class="app-icon">
+    <div class="info">
+        <span class="name">Snapchat Pro</span>
+        <span class="category">Secret Screenshot</span>
+    </div>
+    <button class="btn-get" onclick="install('snapchat')">GET</button>
+</div>
+
+<div class="footer">
+    &copy; 2026 HappyOS Team - Built with Passion
+</div>
+
+<script>
+    function install(appName) {
+        alert("سيتم الآن محاولة تثبيت " + appName + "...");
+        // استبدل your-username باسم حسابك في GitHub
+        const baseUrl = "itms-services://?action=download-manifest&url=https://your-username.github.io/HappyOS/plists/";
+        window.location.href = baseUrl + appName + ".plist";
+    }
+</script>
+
+</body>
+</html>
